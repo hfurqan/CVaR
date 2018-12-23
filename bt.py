@@ -61,7 +61,7 @@ def delta_time(converter,n_days):
 def data(symbols,start_date,end_date):
     dates=pd.date_range(start_date,end_date)
     df=pd.DataFrame(index=dates)
-    df_temp = pd.read_csv('E://Stock_Calculation/KSE30.csv', index_col='Date')
+    df_temp = pd.read_csv('KSE30.csv', index_col='Date')
     df=df.join(df_temp)
     df=df.fillna(method='ffill')
     df=df.fillna(method='bfill')
